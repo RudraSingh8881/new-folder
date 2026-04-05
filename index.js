@@ -43,6 +43,7 @@ let posts=[
 
 //session her ek individual user ko use karne ke liye alag alag session create karta hai.
 app.use(session({
+    secret: 'your-secret-key', // Add a secret key for session signing
     resave:false,
     saveUninitialized:false
 }));
