@@ -1,7 +1,8 @@
 const express=require("express");
-const router=require("express.Router()");//express ke bad dot ka use hota hai.
+const router=express.Router(); //ye router create karne ke liye use hota hai.
 const User=require('../models/user');//models ka user require kate hai.
 const bcrypt=require('bcryptjs');
+const passport = require('passport');
 
 //signup router ko signup page per le jane kam karega bas.
 router.get('/signup',(req,res)=>{

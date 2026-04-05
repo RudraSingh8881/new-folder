@@ -19,8 +19,8 @@ const mongoose=require("mongoose");
 const flash=require("connect-flash");
 const session=require("express-session");
 const { error } = require('console');
-const userRouter=require('./routes/user');
-app.use('/',userRouter);
+//const userRouter=require('./routes/user');
+//app.use('/',userRouter);
 
 
 //app.get('/',(req,res)=>{
@@ -42,7 +42,7 @@ let posts=[
 ];
 
 //session her ek individual user ko use karne ke liye alag alag session create karta hai.
-app.session(session({
+app.use(session({
     resave:false,
     saveUninitialized:false
 }));
@@ -58,8 +58,6 @@ app.use ((req,res,next)=>{
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-passport.use(new LocalStrategy (async(username,password )))
 
 
 
